@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Hot fin",
+  "name": "Hotline finance",
+  "description": "Hotline finance | credit calculator",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,7 +10,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
