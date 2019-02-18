@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 
 import 'materialize-css/dist/css/materialize.min.css';
-import M from 'materialize-css/dist/js/materialize.min.js'
+import M from 'materialize-css/dist/js/materialize.min.js';
 
-let newStep = 1000;
+
 
 class Calculator extends Component {
-
-    sumChangeHandler(suma) {
-        console.log('Summ is: ' + suma);
+    constructor( props ) {
+        super ( props );
+        this.sumChangeHandler = this.sumChangeHandler.bind(this);
+        this.currChangeHandler = this.currChangeHandler.bind(this);
+        this.timeChangeHandler = this.timeChangeHandler.bind(this);
     }
 
-    currChangeHandler(curr) {
-        console.log('Curr is: ' + curr);
+    sumChangeHandler( event ) {
+        /*console.log('Summ is: ' + event.target.value);*/
+        this.props.setSumData(event.target.value)
     }
 
-    timeChangeHandler(time) {
-        console.log('Now is: ' + time);
+    currChangeHandler( event ) {
+        /*console.log('Curr is: ' + event.target.value);*/
+        this.props.setCurrencyData(event.target.value)
+    }
+
+    timeChangeHandler( event ) {
+        /*console.log('Now is: ' + event.target.value);*/
+        this.props.setPeriodData(event.target.value)
     }
 
     render() {
@@ -30,24 +39,24 @@ class Calculator extends Component {
                 <h6 className=""><b>Расчет по кредиту:</b></h6>
                 <form action="#">
                     <div className="row">
+                        <label>Сумма</label>
+                        <h3>{this.props.sum}</h3>
                         <p className="range-field col s12">
-                            <label>Сумма</label>
-                            <h3>{this.state.calculatorData.sum}</h3>
                             <input
                                 type="range"
-                                id="test5"
+                                name="sum"
+                                value={this.props.sum}
                                 min="1000"
                                 step={newStep}
                                 max="1000000"
-                                onChange={(event) => this.sumChangeHandler(event.target.value)}
-                            />
+                                onChange={this.sumChangeHandler}/>
                         </p>
                         <div className="input-field col s12 m6">
                             <select
                                 required
                                 name="currency"
-                                onChange={(event) => this.currChangeHandler(event.target.value)}
-                            >
+                                value={this.props.currency}
+                                onChange={this.currChangeHandler}>
                                 <option value="uah">Гривны</option>
                                 <option value="usd">Доллары</option>
                                 <option value="eur">Евро</option>
@@ -58,8 +67,8 @@ class Calculator extends Component {
                             <select
                                 required
                                 name="period"
-                                onChange={(event) => this.timeChangeHandler(event.target.value)}
-                            >
+                                value={this.props.period}
+                                onChange={this.timeChangeHandler}>
                                 <option value="7">7 дней</option>
                                 <option value="30">1 мес</option>
                                 <option value="60">2 мес</option>
@@ -76,6 +85,7 @@ class Calculator extends Component {
     }
 }
 
+const newStep = 1000;
 const cardStyle = {
     padding: '10px 20px'
 };

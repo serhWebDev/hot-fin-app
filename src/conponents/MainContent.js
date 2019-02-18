@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 
 import 'materialize-css/dist/css/materialize.min.css';
 
-import Calculator from "./Calculator";
+import CalculatorContainer from "./CalculatorContainer";
 import Table from "./Table";
 
 class MainContent extends Component {
     render() {
         return (
             <div className="container">
-                <Calculator
-                    calculatorData={this.props.calculatorData}
+                <CalculatorContainer
+                    /*calculatorData={this.props.calculatorData}*/
                 />
                 <Table
                     credits={this.props.credits}

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class Rate extends Component {
     render() {
-        return this.props.credits.map((el,id)=>{
-            console.table(el);
+        return this.props.credits.map(( el, id) => {
+            /*console.table(el);*/
             return (
-                <tr>
+                <tr key={el.id}>
                     <td>{el.uah}%</td>
                     <td>UAH</td>
                     <td>{el.sumFrom} - {el.sumTo}</td>
