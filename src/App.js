@@ -35,7 +35,7 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <div>
-                    <Header />
+                    {/*<Header />*/}
                     <MainContent
                         credits={this.state.credits.items}
                         /*calculatorData={this.state.calculatorData}*/
