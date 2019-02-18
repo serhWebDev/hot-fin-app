@@ -12,24 +12,15 @@ class Calculator extends Component {
     }
 
     sumChangeHandler( event ) {
-        /*console.log('Summ is: ' + event.target.value);*/
         this.props.setSumData(event.target.value);
-        let sumLocalStorage = JSON.stringify(event.target.value);
-        localStorage.setItem('sumData', sumLocalStorage);
     }
 
     currChangeHandler( event ) {
-        /*console.log('Curr is: ' + event.target.value);*/
         this.props.setCurrencyData(event.target.value);
-        let currencyLocalStorage = JSON.stringify(event.target.value);
-        localStorage.setItem('currencyData', currencyLocalStorage);
     }
 
     timeChangeHandler( event ) {
-        /*console.log('Now is: ' + event.target.value);*/
         this.props.setPeriodData(event.target.value);
-        let periodLocalStorage = JSON.stringify(event.target.value);
-        localStorage.setItem('periodData', periodLocalStorage);
     }
 
     render() {
@@ -95,4 +86,3 @@ const cardStyle = {
 };
 
 export default Calculator;
-

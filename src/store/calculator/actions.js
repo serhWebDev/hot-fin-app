@@ -14,3 +14,5 @@ export const setPeriodData = periodData =>({
     type: GET_PERIOD_DATA_SUM_FROM_CALCULATOR,
     payload: periodData
 });
+export const getStorageData = () => JSON.parse(window.localStorage.getItem('savedData'));
+export const setStorageData = data => window.localStorage.setItem('savedData', JSON.stringify(data));
