@@ -7,9 +7,9 @@ class Header extends Component {
         return (
             <header>
                 <div className="container">
-                    <h2 className="brand-logo yellow-text  text-darken-1 center">
+                    <h4 className="yellow-text text-darken-1 center">
                         <b>Hotline finance</b>
-                    </h2>
+                    </h4>
                 </div>
             </header>
         );

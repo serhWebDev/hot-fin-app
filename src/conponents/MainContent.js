@@ -9,9 +9,7 @@ class MainContent extends Component {
     render() {
         return (
             <div className="container">
-                <CalculatorContainer
-                    /*calculatorData={this.props.calculatorData}*/
-                />
+                <CalculatorContainer />
                 <Table
                     credits={this.props.credits}
                 />

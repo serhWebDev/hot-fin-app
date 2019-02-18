@@ -8,7 +8,6 @@ class CalculatorContainer extends Component {
     render() {
         return (
             <Calculator
-                /*calculatorData = {this.props.calculatorData}*/
                 setSumData = {this.props.setSumData}
                 setCurrencyData = {this.props.setCurrencyData}
                 setPeriodData = {this.props.setPeriodData}

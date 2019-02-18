@@ -18,12 +18,7 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-            credits: []/*,
-            calculatorData: {
-                sum: 10000,
-                currency: 'uah',
-                period: 30
-            }*/
+            credits: []
         };
     }
 
@@ -35,10 +30,9 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <div>
-                    {/*<Header />*/}
+                    <Header />
                     <MainContent
                         credits={this.state.credits.items}
-                        /*calculatorData={this.state.calculatorData}*/
                     />
                 </div>
             </Provider>
