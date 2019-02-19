@@ -8,11 +8,13 @@ class Result extends Component {
         let Period = this.props.period;
         let Coefficient = ( Rate / 100 / 12 );
         let payoutAmount = totalSumma * Coefficient * Math.pow(( 1 + Coefficient ), Period )/(Math.pow(( 1 + Coefficient ), Period ) - 1 ) * Period;
-        let monthlyPayment = payoutAmount / Period;
-        let overpayment = payoutAmount - totalSumma;
+        let monthlyPayment = (payoutAmount / Period).toFixed(2);
+        let overpayment = (payoutAmount - totalSumma).toFixed(2);
         let CurrencyValue = `₴`;
         if ( this.props.currency === 'uah' ) {
             let CurrencyValue = `₴`;
+        } else {
+            let CurrencyValue = `$`;
         }
 
         return (
