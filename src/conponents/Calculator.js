@@ -30,7 +30,7 @@ class Calculator extends Component {
         });
 
         return (
-            <div className="card" style={cardStyle}>
+            <div className="col s8" style={cardStyle}>
                 <h6 className=""><b>Расчет по кредиту:</b></h6>
                 <form action="#">
                     <div className="row">
@@ -64,11 +64,14 @@ class Calculator extends Component {
                                 name="period"
                                 value={this.props.period}
                                 onChange={this.timeChangeHandler}>
-                                <option value="7">7 дней</option>
-                                <option value="30">1 мес</option>
-                                <option value="60">2 мес</option>
-                                <option value="90">3 мес</option>
-                                <option value="180">6 мес</option>
+                                <option value="1">1 мес</option>
+                                <option value="2">2 мес</option>
+                                <option value="3">3 мес</option>
+                                <option value="6">6 мес</option>
+                                <option value="9">9 мес</option>
+                                <option value="12">12 мес</option>
+                                <option value="15">15 мес</option>
+                                <option value="18">18 мес</option>
                             </select>
                             <label>Срок</label>
                         </div>

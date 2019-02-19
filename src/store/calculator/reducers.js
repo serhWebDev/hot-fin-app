@@ -7,9 +7,10 @@ import {
 } from "./actions";
 
 const defaultState = {
+    rate: 2.5,
     sum: 1000,
     currency: 'uah',
-    period: 7
+    period: 1
 };
 
 export const calculatorReducer = (state = getStorageData() || defaultState, action) => {
