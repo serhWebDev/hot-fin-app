@@ -2,21 +2,48 @@ import React, { Component } from 'react';
 
 class Result extends Component {
     render() {
+
+        let totalSumma = this.props.sum;
+        let Rate = this.props.rate;
+        let Period = this.props.period;
+        let Coefficient = ( Rate / 100 / 12 );
+        let payoutAmount = totalSumma * Coefficient * Math.pow(( 1 + Coefficient ), Period )/(Math.pow(( 1 + Coefficient ), Period ) - 1 ) * Period;
+        let monthlyPayment = payoutAmount / Period;
+        let overpayment = payoutAmount - totalSumma;
+        let CurrencyValue = `₴`;
+        if ( this.props.currency === 'uah' ) {
+            let CurrencyValue = `₴`;
+        }
+
         return (
-            <div className="col s4">
-                <h4><b>Result:</b></h4>
-                <p>Ставка: { this.props.rate }%</p>
-                <p>Срок: { this.props.period } мес</p>
-                <p>Коеф: { this.props.rate / 100 / 12 } </p>
-                <p>ПСКВ: { (this.props.sum * ( (this.props.rate / 100 / 12) * Math.pow((1 + this.props.rate / 100 / 12), this.props.period)))/((Math.pow((1 + this.props.rate / 100 / 12), this.props.period) - 1) * this.props.sum ) }</p>
-                <p>Еж_плат: { this.props.sum / this.props.period }</p>
-                <p>Переплата: {( this.props.sum + 5 * ( this.props.sum / this.props.period )) - this.props.sum }</p>
-                <p>Валюта: { this.props.currency }</p>
-                <p>Период: { this.props.period }</p>
+            <div className="col s12 m4 l6" style={styleResult}>
+                <div className="row">
+                    <div className="col s12 m6 input-field">
+                        <label htmlFor="icon_prefix1">Ставка по кредиту:</label>
+                        <br/>
+                        <h5 id="icon_prefix1"><b>{ Rate }%</b></h5>
+                    </div>
+                    <div className="col s12 m6 input-field">
+                        <label htmlFor="icon_prefix2">Ежимесячный платеж: </label>
+                        <br/>
+                        <h5 id="icon_prefix2"><b>{ monthlyPayment }</b></h5>
+                    </div>
+                    <div className="col s12 m12 input-field">
+                        <label htmlFor="icon_prefix3">Переплата:</label>
+                        <br/>
+                        <h5 id="icon_prefix3"><b>{ overpayment } { CurrencyValue }</b></h5>
+                    </div>
+                </div>
             </div>
 
         );
     }
 }
+
+const styleResult = {
+    border: '3px solid blue',
+    borderRadius: '10px'
+};
+
 export default Result;
 

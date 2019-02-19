@@ -30,7 +30,7 @@ class Calculator extends Component {
         });
 
         return (
-            <div className="col s8" style={cardStyle}>
+            <div className="col s12 m8 l6" style={cardStyle}>
                 <h6 className=""><b>Расчет по кредиту:</b></h6>
                 <form action="#">
                     <div className="row">
@@ -54,7 +54,6 @@ class Calculator extends Component {
                                 onChange={this.currChangeHandler}>
                                 <option value="uah">Гривны</option>
                                 <option value="usd">Доллары</option>
-                                <option value="eur">Евро</option>
                             </select>
                             <label>Валюта</label>
                         </div>

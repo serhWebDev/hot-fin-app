@@ -9,7 +9,7 @@ import { setSumData, setCurrencyData, setPeriodData } from '../store/calculator/
 class CalculatorContainer extends Component {
     render() {
         return (
-            <div className="row card">
+            <div className="row card valign-wrapper">
                 <Calculator
                     setSumData = {this.props.setSumData}
                     setCurrencyData = {this.props.setCurrencyData}
