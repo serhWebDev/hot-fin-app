@@ -4,7 +4,7 @@ class Rate extends Component {
     render() {
         return this.props.credits.map(( el, id) => {
             return (
-                <tr key={el.id} onClick={console.log(el.uah)}>
+                <tr key={el.id}>
                     <td>{el.cRete}%</td>
                     <td>{el.currency}</td>
                     <td>{el.sumFrom} - {el.sumTo}</td>
