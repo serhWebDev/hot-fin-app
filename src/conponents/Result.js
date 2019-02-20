@@ -30,9 +30,9 @@ class Result extends Component {
                     <h5 id="prefix2"><b>{ monthlyPayment }</b></h5>
                 </div>
                 <div className="col s12 m4 l4 input-field">
-                    <label htmlFor="prefix3">Переплата:</label>
+                    <label htmlFor="prefix3">Общая переплата:</label>
                     <br/>
-                    <h5 id="prefix3"><b>{ overpayment } { CurrencyValue }.</b></h5>
+                    <h4 id="prefix3"><b>{ overpayment } { CurrencyValue }.</b></h4>
                 </div>
             </div>
 
