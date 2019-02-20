@@ -21,7 +21,7 @@
     },{
       "src": "preloader/logo.svg",
       "sizes": "256x256"
-    },
+    }
   ],
   "start_url": ".",
   "display": "fullscreen",
