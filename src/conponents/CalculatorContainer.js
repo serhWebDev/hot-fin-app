@@ -1,31 +1,48 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
+import { Route } from 'react-router-dom';
+import { setSumData, setCurrencyData, setPeriodData } from '../store/calculator/actions';
 
 import Calculator from './Calculator';
+import Table from "./Table";
 import Result from './Result';
 
-import { setSumData, setCurrencyData, setPeriodData } from '../store/calculator/actions';
 
 class CalculatorContainer extends Component {
     render() {
         return (
-            <div className="row card valign-wrapper">
-                <Calculator
-                    setSumData = {this.props.setSumData}
-                    setCurrencyData = {this.props.setCurrencyData}
-                    setPeriodData = {this.props.setPeriodData}
-                    sum = {this.props.sum}
-                    currency = {this.props.currency}
-                    period = {this.props.period}
-                />
-                <Result
-                    rate = {this.props.rate}
-                    sum = {this.props.sum}
-                    currency = {this.props.currency}
-                    period = {this.props.period}
-                />
+            <div>
+                <div className="card">
+                    <Calculator
+                        setSumData = {this.props.setSumData}
+                        setCurrencyData = {this.props.setCurrencyData}
+                        setPeriodData = {this.props.setPeriodData}
+                        sum = {this.props.sum}
+                        currency = {this.props.currency}
+                        period = {this.props.period}
+                    />
+                    <Route exact path="/"
+                           render={props => (
+                               <React.Fragment>
+                                   <Table
+                                       credits={this.props.credits}
+                                   />
+                               </React.Fragment>
+                           )} />
+                    <Route exact path="/result"
+                           render={props => (
+                               <React.Fragment>
+                                   <Result
+                                       rate = {this.props.rate}
+                                       sum = {this.props.sum}
+                                       currency = {this.props.currency}
+                                       period = {this.props.period}
+                                   />
+                               </React.Fragment>
+                           )}
+                    />
+                </div>
             </div>
-
         );
     }
 }

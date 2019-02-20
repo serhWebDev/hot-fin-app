@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
@@ -30,13 +31,16 @@ class Calculator extends Component {
         });
 
         return (
-            <div className="col s12 m8 l6" style={cardStyle}>
+            <div className="col s12 m12 l12" style={cardStyle}>
                 <h6 className=""><b>Расчет по кредиту:</b></h6>
                 <form action="#">
                     <div className="row">
-                        <label>Сумма</label>
-                        <h3>{this.props.sum}</h3>
-                        <p className="range-field col s12">
+                        <div className="input-field">
+                            <label htmlFor="prefix">Сумма</label>
+                            <br/>
+                            <h3>{this.props.sum}</h3>
+                        </div>
+                        <p  id="prefix" className="range-field col s12">
                             <input
                                 type="range"
                                 name="sum"
@@ -52,8 +56,8 @@ class Calculator extends Component {
                                 name="currency"
                                 value={this.props.currency}
                                 onChange={this.currChangeHandler}>
-                                <option value="uah">Гривны</option>
-                                <option value="usd">Доллары</option>
+                                <option value="грн">Гривны</option>
+                                <option value="дол">Доллары</option>
                             </select>
                             <label>Валюта</label>
                         </div>
@@ -74,7 +78,9 @@ class Calculator extends Component {
                             </select>
                             <label>Срок</label>
                         </div>
-                        <button className="col s12 btn yellow darken-4" type="submit" name="action">Вычислить</button>
+                        <Link to="/result">
+                            <button className="col s12 btn yellow darken-4" type="submit" name="action">Вычислить</button>
+                        </Link>
                     </div>
                 </form>
             </div>

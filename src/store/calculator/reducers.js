@@ -9,7 +9,7 @@ import {
 const defaultState = {
     rate: 2.5,
     sum: 1000,
-    currency: 'uah',
+    currency: 'грн',
     period: 1
 };
 
