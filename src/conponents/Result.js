@@ -10,12 +10,7 @@ class Result extends Component {
         let payoutAmount = totalSumma * Coefficient * Math.pow(( 1 + Coefficient ), Period )/(Math.pow(( 1 + Coefficient ), Period ) - 1 ) * Period;
         let monthlyPayment = (payoutAmount / Period).toFixed(2);
         let overpayment = (payoutAmount - totalSumma).toFixed(2);
-        let CurrencyValue = this.props.currency; /*'₴'*/
-        if ( this.props.currency === 'дол' ) {
-            let CurrencyValue = this.props.currency; /*'$'*/
-        } else {
-            let CurrencyValue = this.props.currency; /*'₴'*/
-        };
+        let CurrencyValue = this.props.currency;
 
         return (
             <div className="row">

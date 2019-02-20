@@ -4,32 +4,17 @@ import { Link } from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
+import SelectItem from "./SelectItem";
+
 class Calculator extends Component {
-    constructor( props ) {
-        super ( props );
-        this.sumChangeHandler = this.sumChangeHandler.bind(this);
-        this.currChangeHandler = this.currChangeHandler.bind(this);
-        this.timeChangeHandler = this.timeChangeHandler.bind(this);
-    }
-
-    sumChangeHandler( event ) {
-        this.props.setSumData(event.target.value);
-    }
-
-    currChangeHandler( event ) {
-        this.props.setCurrencyData(event.target.value);
-    }
-
-    timeChangeHandler( event ) {
-        this.props.setPeriodData(event.target.value);
-    }
-
-    render() {
+    componentDidMount() {
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('select');
             var instances = M.FormSelect.init(elems, {});
         });
+    }
 
+    render() {
         return (
             <div className="col s12 m12 l12" style={cardStyle}>
                 <h6 className=""><b>Расчет по кредиту:</b></h6>
@@ -48,34 +33,38 @@ class Calculator extends Component {
                                 min="1000"
                                 step={newStep}
                                 max="1000000"
-                                onChange={this.sumChangeHandler}/>
+                                onChange={event => this.props.setSumData(event.target.value)}/>
                         </p>
                         <div className="input-field col s12 m6">
-                            <select
-                                required
+                            <SelectItem
+                                required={true}
                                 name="currency"
                                 value={this.props.currency}
-                                onChange={this.currChangeHandler}>
-                                <option value="грн">Гривны</option>
-                                <option value="дол">Доллары</option>
-                            </select>
+                                changeHandler={event => this.props.setCurrencyData(event.target.value)}
+                                options={[
+                                    {value: 'грн', text: "Гривны"},
+                                    {value: 'дол', text: "Доллары"},
+                                ]}
+                            />
                             <label>Валюта</label>
                         </div>
                         <div className="input-field col s12 m6">
-                            <select
-                                required
+                            <SelectItem
+                                required={true}
                                 name="period"
                                 value={this.props.period}
-                                onChange={this.timeChangeHandler}>
-                                <option value="1">1 мес</option>
-                                <option value="2">2 мес</option>
-                                <option value="3">3 мес</option>
-                                <option value="6">6 мес</option>
-                                <option value="9">9 мес</option>
-                                <option value="12">12 мес</option>
-                                <option value="15">15 мес</option>
-                                <option value="18">18 мес</option>
-                            </select>
+                                changeHandler={event => this.props.setPeriodData(event.target.value)}
+                                options={[
+                                    {value: 1, text: "1 мес"},
+                                    {value: 2, text: "2 мес"},
+                                    {value: 3, text: "3 мес"},
+                                    {value: 6, text: "6 мес"},
+                                    {value: 9, text: "9 мес"},
+                                    {value: 12, text: "12 мес"},
+                                    {value: 15, text: "15 мес"},
+                                    {value: 18, text: "18 мес"},
+                                ]}
+                            />
                             <label>Срок</label>
                         </div>
                         <Link to="/result">
