@@ -4,9 +4,24 @@
   "description": "Hotline finance | credit calculator",
   "icons": [
     {
+      "src": "favicon.ico",
+      "sizes": "16x16"
+    },{
+      "src": "favicon.ico",
+      "sizes": "32x32"
+    },{
+      "src": "favicon.ico",
+      "sizes": "64x64"
+    },{
       "src": "preloader/logo.svg",
-      "sizes": "16x16 24x24 32x32 64x64 72x72 96x96 128x128 256x256"
-    }
+      "sizes": "72x72"
+    },{
+      "src": "preloader/logo.svg",
+      "sizes": "128x128"
+    },{
+      "src": "preloader/logo.svg",
+      "sizes": "256x256"
+    },
   ],
   "start_url": ".",
   "display": "fullscreen",
