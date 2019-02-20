@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router } from 'react-router-dom';
 
 import 'materialize-css/dist/css/materialize.min.css';
 
@@ -30,14 +29,12 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Router>
-                    <div>
-                        <Header />
-                        <MainContent
-                            credits={this.state.credits.items}
-                        />
-                    </div>
-                </Router>
+                <div>
+                    <Header />
+                    <MainContent
+                        credits={this.state.credits.items}
+                    />
+                </div>
             </Provider>
         );
     }

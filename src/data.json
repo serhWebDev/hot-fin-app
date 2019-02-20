@@ -6,17 +6,17 @@
         "sumFrom": "1500",
         "sumTo": "30000",
         "periodFrom": "0",
-        "periodTo": "180",
-        "uah": "10.00",
+        "periodTo": "12",
+        "cRete": "10.00",
         "currency": "uah"
       },
       {
         "id": "2",
-        "sumFrom": "1500",
+        "sumFrom": "1000",
         "sumTo": "20000",
         "periodFrom": "0",
-        "periodTo": "180",
-        "uah": "7.00",
+        "periodTo": "36",
+        "cRete": "7.00",
         "currency": "uah"
       },
       {
@@ -24,17 +24,35 @@
         "sumFrom": "1500",
         "sumTo": "70000",
         "periodFrom": "0",
-        "periodTo": "180",
-        "uah": "9.00",
+        "periodTo": "48",
+        "cRete": "9.00",
         "currency": "uah"
       },
       {
         "id": "4",
-        "sumFrom": "1500",
+        "sumFrom": "1000",
         "sumTo": "40000",
         "periodFrom": "0",
-        "periodTo": "180",
-        "uah": "15.00",
+        "periodTo": "24",
+        "cRete": "15.00",
+        "currency": "uah"
+      },
+      {
+        "id": "5",
+        "sumFrom": "1000",
+        "sumTo": "50000",
+        "periodFrom": "0",
+        "periodTo": "36",
+        "cRete": "15.00",
+        "currency": "uah"
+      },
+      {
+        "id": "6",
+        "sumFrom": "1000",
+        "sumTo": "100000",
+        "periodFrom": "0",
+        "periodTo": "48",
+        "cRete": "15.00",
         "currency": "uah"
       }
     ]
