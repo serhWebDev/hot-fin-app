@@ -3,14 +3,13 @@
     "items": [
       {
         "id": "1",
-        "sumFrom": "1500",
-        "sumTo": "30000",
+        "sumFrom": "1000",
+        "sumTo": "1000000",
         "periodFrom": "0",
         "periodTo": "12",
         "cRete": "10.00",
         "currency": "uah"
-      },
-      {
+      },{
         "id": "2",
         "sumFrom": "1000",
         "sumTo": "20000",
@@ -21,14 +20,13 @@
       },
       {
         "id": "3",
-        "sumFrom": "1500",
-        "sumTo": "70000",
+        "sumFrom": "1000",
+        "sumTo": "1000000",
         "periodFrom": "0",
         "periodTo": "48",
         "cRete": "9.00",
         "currency": "uah"
-      },
-      {
+      },{
         "id": "4",
         "sumFrom": "1000",
         "sumTo": "40000",
@@ -36,8 +34,7 @@
         "periodTo": "24",
         "cRete": "15.00",
         "currency": "uah"
-      },
-      {
+      },{
         "id": "5",
         "sumFrom": "1000",
         "sumTo": "50000",
