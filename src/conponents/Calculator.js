@@ -20,21 +20,37 @@ class Calculator extends Component {
                 <h6 className=""><b>Расчет по кредиту:</b></h6>
                 <form action="#">
                     <div className="row">
-                        <div className="input-field">
-                            <label htmlFor="prefix">Сумма</label>
-                            <br/>
-                            <h3>{this.props.sum}</h3>
+                        <div className="input-field col s12">
+                            <label htmlFor="rate">Ставка</label>
+                            <h4 id="rate" className="center-align">{this.props.rate} %</h4>
+                            <p id="prefix" className="range-field col s12">
+                                <input
+                                    id="rateInput"
+                                    name="rate"
+                                    type="range"
+                                    min="0"
+                                    step={newStepRate}
+                                    max="100"
+                                    value={this.props.rate}
+                                    onChange={event => this.props.setRate(event.target.value)}
+                                />
+                            </p>
                         </div>
-                        <p  id="prefix" className="range-field col s12">
-                            <input
-                                type="range"
-                                name="sum"
-                                value={this.props.sum}
-                                min="1000"
-                                step={newStep}
-                                max="1000000"
-                                onChange={event => this.props.setSumData(event.target.value)}/>
-                        </p>
+                        <div className="input-field col s12">
+                            <label htmlFor="sum">Сумма</label>
+                            <h3 id="sum" className="center-align">{this.props.sum}</h3>
+                            <p  id="prefix" className="range-field col s12">
+                                <input
+                                    id="sumInput"
+                                    type="range"
+                                    name="sum"
+                                    value={this.props.sum}
+                                    min="1000"
+                                    step={newStepSum}
+                                    max="1000000"
+                                    onChange={event => this.props.setSumData(event.target.value)}/>
+                            </p>
+                        </div>
                         <div className="input-field col s12 m6">
                             <SelectItem
                                 required={true}
@@ -77,7 +93,8 @@ class Calculator extends Component {
     }
 }
 
-const newStep = 1000;
+const newStepRate = 0.01;
+const newStepSum = 1000;
 const cardStyle = {
     padding: '10px 20px'
 };

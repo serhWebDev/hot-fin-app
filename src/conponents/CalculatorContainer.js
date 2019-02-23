@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { setSumData, setCurrencyData, setPeriodData } from '../store/calculator/actions';
+import { setRate, setSumData, setCurrencyData, setPeriodData } from '../store/calculator/actions';
 
 import Calculator from './Calculator';
 import Table from "./Table";
@@ -15,9 +15,11 @@ class CalculatorContainer extends Component {
                 <div>
                     <div className="card">
                         <Calculator
+                            setRate = {this.props.setRate}
                             setSumData = {this.props.setSumData}
                             setCurrencyData = {this.props.setCurrencyData}
                             setPeriodData = {this.props.setPeriodData}
+                            rate = {this.props.rate}
                             sum = {this.props.sum}
                             currency = {this.props.currency}
                             period = {this.props.period}
@@ -59,6 +61,7 @@ const mapStateProps = state => {
 };
 
 const mapDispatchProps = {
+    setRate,
     setSumData,
     setCurrencyData,
     setPeriodData

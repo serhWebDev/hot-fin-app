@@ -14,17 +14,17 @@ class Result extends Component {
 
         return (
             <div className="row">
-                <div className="col s12 m4 l4 input-field">
+                <div className="col s12 m6 l6 input-field">
                     <label htmlFor="prefix1">Ставка по кредиту:</label>
                     <br/>
                     <h5 id="prefix1"><b>{ Rate }%</b></h5>
                 </div>
-                <div className="col s12 m4 l4 input-field">
+                <div className="col s12 m6 l6 input-field">
                     <label htmlFor="prefix2">Ежимесячный платеж: </label>
                     <br/>
                     <h5 id="prefix2"><b>{ monthlyPayment }</b></h5>
                 </div>
-                <div className="col s12 m4 l4 input-field">
+                <div className="col s12 m12 l12 input-field">
                     <label htmlFor="prefix3">Общая переплата:</label>
                     <br/>
                     <h4 id="prefix3"><b>{ overpayment } { CurrencyValue }.</b></h4>
